@@ -1,7 +1,8 @@
 # Estructura del proyecto
 
 Lo primero que se debe hacer es ubicarse en la rama "develop" del repositorio. Las imágenes del lenguaje ubicuo y de los diagramas de context mapper se pueden encontrar en la carpeta "/src/main/cml/entregas-alpes/". 
-![image](https://user-images.githubusercontent.com/78747930/217143718-a6d7ac4e-b870-4613-9d97-59bcbaa5696f.png)
+![image](https://user-images.githubusercontent.com/78747930/217144270-b8e7a317-b6ee-4a74-9053-6dab70c79e48.png)
+
 
 
 # Fragmentos de código
