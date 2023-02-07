@@ -1,0 +1,84 @@
+/*Context Map written with 'ContextMapper DSL' */
+ContextMap EntregasContextMapAlternative {
+    type = SYSTEM_LANDSCAPE
+    state = TO_BE
+    /* Add bounded contexts to this context map: */
+    contains GestionPedidosContext
+    contains GestionEntregasContext
+    contains GestionClientesContext
+    contains GestionOrdenesContext
+    contains GestionInventariosContext
+    contains GestionTransporteContext
+    contains GestionEnviosContext
+/* Define the context relationships: */
+	//upstream es el proveedor
+	//downstream consumidor
+
+    //[OHS,PL] Upstream-Downstream [ACL]    
+	GestionClientesContext[OHS,PL]  Upstream-Downstream [ACL]GestionOrdenesContext    		
+    GestionPedidosContext  Shared-Kernel  GestionOrdenesContext
+    GestionInventariosContext  Upstream-Downstream  GestionPedidosContext
+    GestionTransporteContext [OHS,PL]  Upstream-Downstream [ACL]GestionPedidosContext    
+    GestionEnviosContext  Upstream-Downstream  GestionPedidosContext
+    GestionEntregasContext  Upstream-Downstream  GestionPedidosContext
+}
+
+
+/* Bounded Context Definitions */
+BoundedContext GestionPedidosContext implements GestionPedidosDomain {
+    domainVisionStatement = "Subdomain managing everything customer-related."
+}
+
+BoundedContext GestionEntregasContext implements EntregasDomain {
+    domainVisionStatement = "Context encargado de todo lo relacionado con Entregas"
+}
+
+BoundedContext GestionClientesContext implements GestionClientesDomain {
+    domainVisionStatement = "ste contexto acotado se enfoca en el manejo de información de los clientes, incluyendo sus datos de contacto y historial de compras"
+}
+BoundedContext GestionOrdenesContext implements GestionOrdenesDomain {
+    domainVisionStatement = "Este contexto acotado se enfoca en la generación y gestión de órdenes de compra, incluyendo la asociación con clientes y el procesamiento de pagos."
+}
+BoundedContext GestionInventariosContext implements GestionInventariosDomain {
+    domainVisionStatement = "Este contexto acotado se enfoca en la gestión de existencias de productos, incluyendo la actualización de cantidades disponibles y el monitoreo de niveles de inventario."
+}
+BoundedContext GestionTransporteContext implements GestionTransporteDomain {
+    domainVisionStatement = "Este contexto acotado se enfoca en la integración con servicios de transporte, incluyendo la generación de envíos y la asociación con direcciones de entrega."
+}
+BoundedContext GestionEnviosContext implements GestionEnviosDomain {
+    domainVisionStatement = "Este contexto acotado se enfoca en el seguimiento y monitoreo de envíos, incluyendo la generación de notificaciones y la actualización de estados de envío. Entregas: Este contexto acotado se enfoca en la planificación y despacho de envíos, incluyendo la asociación con servicios de transporte y la generación de informes de entrega."
+}
+
+/* Domain & Subdomain Definitions */
+Domain EntregasDomain {
+    Subdomain GestionPedidosDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con el pedido."
+    }
+
+    Subdomain GestionClientesDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con el cliente."
+    }    
+
+    Subdomain GestionOrdenesDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con las ordenes"
+    }
+
+    Subdomain GestionInventariosDomain {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con los inventarios"
+    }
+
+    Subdomain GestionTransporteDomain {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con transporte"
+    }
+
+    Subdomain GestionEnviosDomain {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Subdominio que administra todo lo relacionado con Envios."
+    }
+}
+
