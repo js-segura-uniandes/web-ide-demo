@@ -1,8 +1,7 @@
 # Estructura del proyecto
 
-Lo primero que se debe hacer es ubicarse en la rama "develop" del repositorio. Las imágenes del lenguaje ubicuo y de los diagramas de context mapper se pueden encontrar en la carpeta "/src/main/cml/entregas-alpes/". 
+Lo primero que se debe hacer es ubicarse en la rama "develop" del repositorio. Las imágenes del lenguaje ubicuo y de los diagramas de context mapper se pueden encontrar en la carpeta "/src/main/cml/entregas-alpes/". Alli se encuentra 1 diagrama para el escenario TO-BE, otra del escenario AS-IS y la imagen del lenguaje ubicuo. La siguiente es la estructura del proyecto:
 ![image](https://user-images.githubusercontent.com/78747930/217144270-b8e7a317-b6ee-4a74-9053-6dab70c79e48.png)
-
 
 
 # Fragmentos de código
@@ -11,4 +10,4 @@ Los fragmentos de código (.cml) de los diagramas los puede encontrar en la carp
 - Contextos acotados y sus relaciones: /src/main/cml/entregas-alpes/entregas-context-diagram-as-is.cml y src/main/cml/entregas-alpes/entregas-context-diagram-as-is to-be.cml
 
 # gitpod.yml
-Este archivo lo puede encontrar en la raiz del proyecto
+Este archivo lo puede encontrar en la raiz del proyecto. Adicionalmente esta es la URL del gitpod https://gitpod.io/#https://github.com/js-segura-uniandes/web-ide-demo 
