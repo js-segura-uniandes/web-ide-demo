@@ -26,6 +26,6 @@ Lo primero que se debe hacer es ubicarse en la rama "develop" del repositorio. L
                 └── JDL.ftl
 
 # Fragmentos de código
-Los fragmentos de código (.cml) de los diagramas los puede encontrar en la carpeta "/src/main/cml/entregas-alpes/". Existe 1 diagrama para el escenario As-IS y otro para el escenario TO-BE.
+Los fragmentos de código (.cml) de los diagramas los puede encontrar en la carpeta "/src/main/cml/entregas-alpes/".Existe 1 diagrama para el escenario As-IS y otro para el escenario TO-BE.
 Dominios y subdominios: /src/main/cml/entregas-alpes/entregas-context-diagram-as-is.cml y src/main/cml/entregas-alpes/entregas-context-diagram-as-is to-be.cml
 Contextos acotados y sus relaciones: /src/main/cml/entregas-alpes/entregas-context-diagram-as-is.cml y src/main/cml/entregas-alpes/entregas-context-diagram-as-is to-be.cml
